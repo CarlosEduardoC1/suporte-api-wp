@@ -1,11 +1,8 @@
-FROM node:alpine
-RUN apk add --no-cache python g++ make
-WORKDIR /usr/app
-COPY package*.json ./
-RUN npm install
-
+FROM node:10
+RUN mkdir -p /src/user/app
+WORKDIR /src/usr/app
+COPY package*json ./
 COPY . .
-
+RUN npm install
 EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
