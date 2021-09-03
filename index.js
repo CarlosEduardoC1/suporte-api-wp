@@ -14,6 +14,7 @@ app.use(express.json({ limit: '50mb' }));
 
 app.use('/cadastro', cadastro);
 app.use('/log', log);
+
 app.use('/financeiro', financeiro);
 
 
